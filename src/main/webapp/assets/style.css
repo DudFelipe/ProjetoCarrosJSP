@@ -1,0 +1,59 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 11/02/2019, 15:26:40
+    Author     : Dud Felipe
+*/
+
+*{ padding: 0; margin: 0 auto; }
+
+html, body { height: 100%; }
+
+#tudo{ min-height: 100%; position: relative; }
+
+#topo { background-color: #003366; }
+
+#menuSuperior{ padding: 25px; text-align: center; }
+
+#menuSuperior a { text-decoration: none; color: #FFF; margin-left: 10px; padding: 20px; }
+
+#menuSuperior a:hover { background-color: #002d5b; border-radius: 10px; }
+
+#principal { padding-bottom: 160px; }
+
+#rodape {
+    background-color: #003366; text-align: center; color: #bbb; position: absolute;
+    width: 100%; bottom: 0; height: 150px; display: table;
+}
+
+#rodape p { vertical-align: middle; display: table-cell; }
+
+.titulo{ text-align: center; padding: 10px; }
+
+p { padding: 10px; }
+
+tr td{ text-align: center; }
+tr th{ padding: 10px; }
+
+td a{ text-decoration: none; color: #000; }
+td a:hover { background-color: #002d5b; color: #fff; padding: 10px; border-radius: 10px; }
+
+#formCadastro { text-align: center; margin-right: 18px; }
+
+.conjCadastro{ margin-bottom: 10px; }
+
+#ContentPlaceHolder1_txtAno{ margin-left: 12px; }
+
+#ContentPlaceHolder1_txtPreco{ margin-left: 3px; }
+
+#sucesso img { max-width: 400px; max-height: 200px; text-align: center;
+    display: block; margin-top: 20px; }
+
+#imagem{ text-align: center; }
+
+#ContentPlaceHolder1_imagemCarro { max-width: 400px; max-height: 200px; }
+
+#atributos { text-align: center; }
