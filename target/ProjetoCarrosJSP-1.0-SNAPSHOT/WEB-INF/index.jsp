@@ -23,8 +23,8 @@
                     
                     <div id="menuSuperior"> <!--Menu superior - Links da página--> 
                         <a href="IndexServlet" id="linkHome">Home</a>
-                        <a href="PopularesServlet" id="linkPopulares">Carros Populares</a>
-                        <a href="luxo.jsp" id="linkLuxo">Carros de Luxo</a>
+                        <a href="ListarServlet?categoria=P" id="linkPopulares">Carros Populares</a>
+                        <a href="ListarServlet?categoria=L" id="linkLuxo">Carros de Luxo</a>
                         <a href="CadastroServlet" id="linkCadastra">Cadastrar Carro</a>
                     </div> <!--Fim do menu superior-->
                 </div><!--Fim do topo da página-->

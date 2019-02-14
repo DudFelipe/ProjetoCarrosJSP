@@ -31,7 +31,7 @@
             </div><!--Fim do topo da página-->
             <div id="principal">
                 <div class="titulo">
-                    <h1>Carros Populares</h1>
+                    <h1>Carros de Luxo</h1>
                 </div>
                 
                 <div class="col-sm-3"></div>

@@ -30,7 +30,19 @@ public class CarroBLL {
         }
     }
     
-    public static List<Carro> listarPopulares() throws Exception{
-        return CarroDAO.listarPopulares();
+    public static void alterar(Carro c) throws Exception{
+        CarroDAO.alterar(c);
+    }
+    
+    public static void excluir(int id) throws Exception{
+        CarroDAO.excluir(id);
+    }
+    
+    public static Carro obterCarro(int id) throws Exception{
+        return CarroDAO.obterCarro(id);
+    }
+    
+    public static List<Carro> listar(char categoria) throws Exception{
+        return CarroDAO.listar(categoria);
     }
 }

@@ -45,15 +45,9 @@ td a:hover { background-color: #002d5b; color: #fff; padding: 10px; border-radiu
 
 .conjCadastro{ margin-bottom: 10px; }
 
-#ContentPlaceHolder1_txtAno{ margin-left: 12px; }
-
-#ContentPlaceHolder1_txtPreco{ margin-left: 3px; }
-
 #sucesso img { max-width: 400px; max-height: 200px; text-align: center;
     display: block; margin-top: 20px; }
 
 #imagem{ text-align: center; }
-
-#ContentPlaceHolder1_imagemCarro { max-width: 400px; max-height: 200px; }
 
 #atributos { text-align: center; }

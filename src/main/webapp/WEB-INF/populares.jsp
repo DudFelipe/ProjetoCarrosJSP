@@ -13,6 +13,7 @@
         <title>Carros</title>
         <link href="assets/style.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     </head>
     <body>
         <div id="tudo">
@@ -23,8 +24,8 @@
 
                 <div id="menuSuperior"> <!--Menu superior - Links da página--> 
                     <a href="IndexServlet" id="linkHome">Home</a>
-                    <a href="PopularesServlet" id="linkPopulares">Carros Populares</a>
-                    <a href="luxo.jsp" id="linkLuxo">Carros de Luxo</a>
+                    <a href="ListarServlet?categoria=P" id="linkPopulares">Carros Populares</a>
+                    <a href="ListarServlet?categoria=L" id="linkLuxo">Carros de Luxo</a>
                     <a href="CadastroServlet" id="linkCadastra">Cadastrar Carro</a>
                 </div> <!--Fim do menu superior-->
             </div><!--Fim do topo da página-->
@@ -35,7 +36,7 @@
                 
                 <div class="col-sm-3"></div>
                 
-                <table class="table col-sm-6" id="tabelaservicos">
+                <table class="table col-sm-6">
                     <thead>
                         <tr>
                             <th scope="col">Id</th>
@@ -60,8 +61,8 @@
                                 <td><c:out value="${c.categoria}" /></td>
                                 <td><img src="${c.imagem}"></td>
 
-                                <td><a href="${pageContext.request.contextPath}/AlterarCarroServlet?id=${c.id}"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></td>
-                                <td><a href="${pageContext.request.contextPath}/ExcluirCarroServlet?id=${c.id}"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
+                                <td><a href="${pageContext.request.contextPath}/AlterarCarroServlet?id=${c.id}&categoria=${c.categoria}"><i class="far fa-edit"></i></a></td>
+                                <td><a href="${pageContext.request.contextPath}/ExcluirCarroServlet?id=${c.id}&categoria=${c.categoria}"><i class="far fa-trash-alt"></i></a></td>
                             </tr>
                         </c:forEach>
 

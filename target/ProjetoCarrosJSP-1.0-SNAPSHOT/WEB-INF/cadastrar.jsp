@@ -23,8 +23,8 @@
 
                 <div id="menuSuperior"> <!--Menu superior - Links da página--> 
                     <a href="IndexServlet" id="linkHome">Home</a>
-                    <a href="PopularesServlet" id="linkPopulares">Carros Populares</a>
-                    <a href="luxo.jsp" id="linkLuxo">Carros de Luxo</a>
+                    <a href="ListarServlet?categoria=P" id="linkPopulares">Carros Populares</a>
+                    <a href="ListarServlet?categoria=L" id="linkLuxo">Carros de Luxo</a>
                     <a href="CadastroServlet" id="linkCadastra">Cadastrar Carro</a>
                 </div> <!--Fim do menu superior-->
             </div><!--Fim do topo da página-->
@@ -32,7 +32,15 @@
                 <div class="titulo">
                     <h1>Cadastro de carros</h1>
                 </div>
-                <form method="POST" action="CadastroServlet">
+                <form method="POST" 
+                      action="<c:choose>
+                          <c:when test="${c != null}">
+                              ${pageContext.request.contextPath}/AlterarCarroServlet?id=${c.id}
+                          </c:when>
+                          <c:otherwise>
+                              ${pageContext.request.contextPath}/CadastroServlet
+                          </c:otherwise>
+                        </c:choose>">
                     <div class="form-row mb-3">
                         <div class="col-sm-3"></div>
 
@@ -40,7 +48,7 @@
                             <label for="nome">Nome</label>
                             <c:choose>
                                 <c:when test="${erroNome == null}">
-                                    <input type="text" class="form-control" id="nome" name="nome" value="">
+                                    <input type="text" class="form-control" id="nome" name="nome" value="${c.nome}">
                                 </c:when>
                                 <c:otherwise>
                                     <input type="text" class="form-control is-invalid" id="nome" name="nome">
@@ -55,7 +63,7 @@
                             <label for="marca">Marca</label>
                             <c:choose>
                                 <c:when test="${erroMarca == null}">
-                                    <input type="text" class="form-control" id="marca" name="marca">
+                                    <input type="text" class="form-control" id="marca" name="marca" value="${c.marca}">
                                 </c:when>
                                 <c:otherwise>
                                     <input type="text" class="form-control is-invalid" id="marca" name="marca">
@@ -76,7 +84,7 @@
                             <label for="Ano">Ano</label>
                             <c:choose>
                                 <c:when test="${erroAno == null}">    
-                                    <input type="text" class="form-control" id="ano" name="ano">
+                                    <input type="text" class="form-control" id="ano" name="ano" value="${c.ano}">
                                 </c:when>
                                 <c:otherwise>
                                     <input type="text" class="form-control is-invalid" id="ano" name="ano">
@@ -91,7 +99,7 @@
                             <label for="preco">Preço</label>
                             <c:choose>
                                 <c:when test="${erroPreco == null}">
-                                    <input type="text" class="form-control" id="preco" name="preco">
+                                    <input type="text" class="form-control" id="preco" name="preco" value="${c.preco}">
                                 </c:when>
                                 <c:otherwise>
                                     <input type="text" class="form-control is-invalid" id="preco" name="preco">
@@ -131,7 +139,7 @@
                         <div class="col-sm-3">
                             <label for="imagem">Imagem</label>
                             <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="inputGroupFile01" name="imagem" aria-describedby="inputGroupFileAddon01">
+                                <input type="file" class="custom-file-input" id="inputGroupFile01" name="imagem" aria-describedby="inputGroupFileAddon01" value="${c.imagem}">
                                 <label class="custom-file-label" for="inputGroupFile01">Escolha o arquivo</label>
                             </div>
                         </div>
