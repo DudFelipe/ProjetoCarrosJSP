@@ -1,6 +1,10 @@
 DAO\CarroDAO.class
+Servlets\DetalheServlet.class
+Servlets\ListarServlet.class
+Servlets\AlterarCarroServlet.class
 Models\Carro.class
 Utils\ConnectionUtils.class
 Servlets\CadastroServlet.class
 Servlets\IndexServlet.class
 BLL\CarroBLL.class
+Servlets\ExcluirCarroServlet.class

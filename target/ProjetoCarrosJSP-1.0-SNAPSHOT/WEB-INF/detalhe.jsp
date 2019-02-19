@@ -57,7 +57,7 @@
             <div id="rodape"> <!--Rodapé da página-->
                 <p>
                     Este site foi desenvolvido para servir de exemplo de como criar
-                    um site utilizando ASP.NET e como se conectar com o banco de dados
+                    um site utilizando JSP e como se conectar com o banco de dados
                     para realizar consultas e mostrar seus resultados.<br />
                     <strong>Intellectuale - Tecnologia & Treinamento</strong>
                 </p>
