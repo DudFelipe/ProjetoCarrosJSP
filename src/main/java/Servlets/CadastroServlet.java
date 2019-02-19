@@ -59,15 +59,20 @@ public class CadastroServlet extends HttpServlet {
             request.setAttribute("erroPreco", "O preço informado é inválido!");
         }
         
-        if(request.getParameter("categoria").trim().length() > 0){
+        if(!request.getParameter("categoria").equals("O")){
             c.setCategoria(request.getParameter("categoria").charAt(0));
         }
         else{
             request.setAttribute("erroCategoria", "Selecione uma categoria!");
         }
         
-        String caminho = "C:/Users/Dud Felipe/Desktop/Estagio/Nova Pasta/ProjetoCarrosJSP/src/main/webapp/assets/Imagens/";
-        c.setImagem(caminho + request.getParameter("imagem"));
+        if(request.getParameter("imagem") != null){
+            String caminho = "assets/Imagens/";
+            c.setImagem(caminho + request.getParameter("imagem"));
+        }
+        else{
+            c.setImagem(null);
+        }
         
         RequestDispatcher dispatcher;
         

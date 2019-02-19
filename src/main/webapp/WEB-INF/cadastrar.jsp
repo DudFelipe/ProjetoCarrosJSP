@@ -130,9 +130,9 @@
                                     </div>
                                 </c:otherwise>
                             </c:choose>
-                                <option value="">Selecione...</option>
-                                <option value="P">Popular</option>
-                                <option value="L">Luxo</option>
+                                <option value="O">Selecione...</option>
+                                <option value="P" <c:if test="${c.categoria == 'P'.charAt(0)}">selected</c:if>>Popular</option>
+                                <option value="L" <c:if test="${c.categoria == 'L'.charAt(0)}">selected</c:if>>Luxo</option>
                             </select>
                         </div>
                         
@@ -140,7 +140,7 @@
                             <label for="imagem">Imagem</label>
                             <div class="custom-file">
                                 <input type="file" class="custom-file-input" id="inputGroupFile01" name="imagem" aria-describedby="inputGroupFileAddon01" value="${c.imagem}">
-                                <label class="custom-file-label" for="inputGroupFile01">Escolha o arquivo</label>
+                                <label class="custom-file-label" for="inputGroupFile01">Escolha uma imagem</label>
                             </div>
                         </div>
                         

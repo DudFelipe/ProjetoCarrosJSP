@@ -56,7 +56,7 @@ public class AlterarCarroServlet extends HttpServlet {
             c.setAno(Integer.parseInt(request.getParameter("ano")));
             c.setPreco(Double.parseDouble(request.getParameter("preco")));
             c.setCategoria(request.getParameter("categoria").charAt(0));
-            c.setImagem(request.getParameter("imagem"));
+            c.setImagem("assets/Imagens/" + request.getParameter("imagem"));
             
             CarroBLL.alterar(c);
             

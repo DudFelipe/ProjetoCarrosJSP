@@ -4,7 +4,6 @@ import BLL.CarroBLL;
 import Models.Carro;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,31 +15,33 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Dud Felipe
  */
-@WebServlet(name = "PopularesServlet", urlPatterns = {"/PopularesServlet"})
-public class PopularesServlet extends HttpServlet {
+@WebServlet(name = "DetalheServlet", urlPatterns = {"/DetalheServlet"})
+public class DetalheServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        List<Carro> carros = null;
-        
-        try{
-            carros = CarroBLL.listar();
-        }
-        catch(Exception ex){
-            ex.printStackTrace();
-        }
-        
-        request.setAttribute("carros", carros);
-        
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/populares.jsp");
-        dispatcher.forward(request, response);
+            
+            int id = Integer.parseInt(request.getParameter("id"));
+            
+            Carro c = new Carro();
+            
+            try{
+                c = CarroBLL.obterCarro(id);
+                
+                request.setAttribute("carro", c);
+                
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/detalhe.jsp");
+                dispatcher.forward(request, response);
+            }
+            catch(Exception ex){
+                ex.printStackTrace();
+            }
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+    
     }
 }
